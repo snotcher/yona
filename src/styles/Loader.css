@@ -1,0 +1,81 @@
+/* src/styles/Loader.css */
+@keyframes loaderBackgroundPulse {
+  0% {
+    background-color: #fdf6f0;
+  }
+
+  50% {
+    background-color: #fae8dc;
+  }
+
+  100% {
+    background-color: #fdf6f0;
+  }
+}
+
+.loader-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  animation: loaderBackgroundPulse 3s ease-in-out infinite;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.loader-svg-container {
+  width: 250px;
+  height: 250px;
+  margin-bottom: 2rem;
+  overflow: visible;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.glow-backend {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center, rgba(212, 165, 116, 0.2) 0%, transparent 70%);
+  z-index: 0;
+}
+
+.loader-text-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.loader-text {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.4rem;
+  color: #c9957a;
+  margin: 0;
+  display: flex;
+  gap: 6px;
+}
+
+.loader-subtext {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.2rem;
+  color: #d4a574;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+@media (max-width: 768px) {
+  .loader-svg-container {
+    width: 200px;
+    height: 200px;
+  }
+}

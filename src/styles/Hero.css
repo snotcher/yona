@@ -1,0 +1,93 @@
+/* src/styles/Hero.css */
+.hero-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  /* Breathing animated warm gradient */
+  background: linear-gradient(135deg, #f9e8e0 0%, #f5d5c5 30%, #e8d5b7 60%, #d4c5a9 100%);
+  background-size: 200% 200%;
+  animation: colorBreathing 8s ease-in-out infinite alternate;
+}
+
+@keyframes colorBreathing {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Bokeh overlays */
+.hero-container::after {
+  content: "";
+  position: absolute;
+  top: -20%;
+  left: -20%;
+  width: 70%;
+  height: 70%;
+  background: radial-gradient(circle, rgba(255, 245, 238, 0.4) 0%, transparent 60%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-container::before {
+  content: "";
+  position: absolute;
+  bottom: -30%;
+  right: -10%;
+  width: 80%;
+  height: 80%;
+  background: radial-gradient(circle, rgba(201, 149, 122, 0.25) 0%, transparent 60%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-content {
+  z-index: 10;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.yona-title {
+  font-size: 6rem;
+  color: #fff5ee;
+  margin-bottom: 0.5rem;
+  letter-spacing: 4px;
+  text-shadow: 0 0 60px rgba(212, 165, 116, 0.4);
+}
+
+@media (min-width: 768px) {
+  .yona-title {
+    font-size: 9rem;
+    letter-spacing: 8px;
+  }
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  color: var(--color-rose);
+  font-style: italic;
+  font-family: var(--font-heading);
+  letter-spacing: 2px;
+}
+
+.floating-floral {
+  position: absolute;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 40px;
+  z-index: 10;
+  color: var(--color-rose);
+  font-size: 2rem;
+  opacity: 0.8;
+}

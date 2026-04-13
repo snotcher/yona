@@ -1,0 +1,176 @@
+/* src/styles/DayWithYou.css */
+.daywithyou-section {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  overflow: visible; /* allow natural overflow per spec */
+  background: linear-gradient(
+    to bottom,
+    #f9e4c8 0%,       /* warm golden morning */
+    #f0d4a8 15%,
+    #e8c89a 30%,
+    #d4b896 45%,
+    #b8a8c8 60%,      /* transitioning to dusk */
+    #8090b8 75%,
+    #4a5a8a 88%,
+    #2d3a6a 100%      /* deep blue evening */
+  );
+  padding: 100px 0 60px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  scroll-snap-align: start;
+}
+
+.daywide-sticker {
+  position: absolute;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0.85;
+}
+
+.daywithyou-header {
+  text-align: center;
+  margin-bottom: 5rem;
+  z-index: 10;
+  padding: 0 20px;
+}
+
+.daywithyou-subtitle {
+  font-family: var(--font-letter);
+  font-size: 1.2rem;
+  color: rgba(180,130,80,0.8);
+  letter-spacing: 2px;
+}
+
+.daywithyou-title-main {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  color: #3d2b1f;
+  margin-top: 0.5rem;
+}
+
+.timeline-container {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  padding: 0 20px;
+}
+
+.timeline-line {
+  position: absolute;
+  top: 0;
+  left: 10%;
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    #d4a574 0%,
+    #c9957a 25%,
+    #b8a8c8 50%,
+    #8090b8 75%,
+    #4a5a8a 100%
+  );
+  z-index: 1;
+}
+
+.timeline-node {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  z-index: 2;
+}
+
+.timeline-circle {
+  position: absolute;
+  left: 10%;
+  transform: translateX(-50%);
+  top: 30px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: transparent;
+  border: 2px solid;
+  z-index: 3;
+}
+
+.daywithyou-card {
+  margin-left: 15%;
+  width: 55%;
+  background: rgba(255, 248, 240, 0.18);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 20px;
+  padding: 28px 32px;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.5rem;
+}
+
+.card-time {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.6);
+}
+
+.card-icon {
+  color: rgba(255,255,255,0.7);
+}
+
+.card-title {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-style: italic;
+  color: #fff8f0;
+  margin-bottom: 0.5rem;
+}
+
+.card-body {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.8;
+  color: rgba(255,248,240,0.85);
+  margin: 0;
+}
+
+/* Tablet & Mobile scaling */
+@media (max-width: 768px) {
+  .timeline-line {
+    left: 20px;
+  }
+  .timeline-circle {
+    left: 20px;
+  }
+  .daywithyou-card {
+    margin-left: 45px;
+    width: calc(100% - 45px);
+  }
+}
+
+/* Strict mobile fine-tuning requested by user */
+@media (max-width: 480px) {
+  .daywithyou-card {
+    padding: 20px 18px;
+    margin-left: 32px;
+    width: calc(100% - 32px);
+  }
+  .card-title {
+    font-size: 1.3rem;
+  }
+  .card-body {
+    font-size: 0.9rem;
+  }
+}
